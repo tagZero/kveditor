@@ -1,0 +1,12 @@
+.kv-editor {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 400;
+  color: #333;
+  margin: 3px;
+  padding: 3px;
+  display: flex;
+  flex-flow: column nowrap;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-width: 190px;
+}
