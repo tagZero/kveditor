@@ -10,45 +10,97 @@
     input[type=text] {
       border-radius: 3px;
       padding: 5px;
-      border: solid 1px #DDD;
       min-width: 30px;
       width: 100%;
-      color: #333;
-
-      &::placeholder {
-        color: #BBB;
-      }
     }
 
-    input:focus {
-      border: solid 1px #999;
-      outline: none;
+    .input-key {
+      flex: 0 2 auto; /* no grow, shrinks double */
+      display: flex;
+      margin-right: 5px;
     }
-  }
 
-  .input-key {
-    flex: 0 2 auto; /* no grow, shrinks double */
-    display: flex;
-    margin-right: 5px;
-  }
+    .input-value {
+      flex: 1 1 auto; /* grows, shrinks halve */
+      display: flex;
+      margin-right: 5px;
+    }
 
-  .input-value {
-    flex: 1 1 auto; /* grows, shrinks halve */
-    display: flex;
-    margin-right: 5px;
-  }
-
-  .input-submit {
-    flex: 0 1 auto;
-    cursor: pointer;
-    border-radius: 3px;
-    border: solid 1px #DDD;
-    color: #333;
+    .input-submit {
+      flex: 0 1 auto;
+      cursor: pointer;
+      border-radius: 3px;
+    }
   }
 
   .error {
-    color: red;
     margin: 5px 0;
     font-size: 14px;
+  }
+
+  &.light {
+    .row {
+      input[type=text] {
+        background-color: #FFF;
+        border: solid 1px #DDD;
+        color: #222;
+
+        &::placeholder {
+          color: #BBB;
+        }
+      }
+
+      input:focus {
+        border: solid 1px #999;
+        outline: none;
+      }
+
+      .input-submit {
+        background-color: #EEE;
+        border: solid 1px #DDD;
+        color: #333;
+
+        &:hover {
+          background-color: #CCC;
+        }
+      }
+    }
+
+    .error {
+      color: #F00;
+    }
+  }
+
+  &.dark {
+    .row {
+      input[type=text] {
+        background-color: #888;
+        border: solid 1px #333;
+        color: #FFF;
+
+        &::placeholder {
+          color: #BBB;
+        }
+      }
+
+      input:focus {
+        border: solid 1px #222;
+        outline: none;
+      }
+
+      .input-submit {
+        background-color: #666;
+        border: solid 1px #333;
+        color: #BBB;
+
+        &:hover {
+          background-color: #555;
+        }
+      }
+    }
+
+    .error {
+      color: #F66;
+    }
   }
 }

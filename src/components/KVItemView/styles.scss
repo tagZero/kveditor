@@ -3,18 +3,13 @@
   flex-flow: row nowrap;
   margin-bottom: 5px;
   flex: 1;
-  /*line-height: 30px;*/
 
   .key-value {
     flex: 1 1 auto;
     margin-right: 5px;
-    border: solid 1px #DDD;
     overflow: auto;
     padding: 3px;
     border-radius: 3px;
-    /*white-space: nowrap;
-    text-overflow: ellipsis;
-    hyphens: manual;*/
 
     .key {
       font-weight: 600;
@@ -31,7 +26,48 @@
     flex: 0 0 auto;
     cursor: pointer;
     border-radius: 3px;
-    border: solid 1px #DDD;
-    color: #333;
+  }
+
+  &.light {
+    .key-value {
+      background-color: #FFF;
+      border: solid 1px #DDD;
+
+      .key {
+        background-color: #888;
+        color: white;
+      }
+    }
+
+    .submit {
+      background-color: #EEE;
+      border: solid 1px #DDD;
+      color: #333;
+
+      &:hover {
+        background-color: #CCC;
+      }
+    }
+  }
+  &.dark {
+    .key-value {
+      background-color: #888;
+      border: solid 1px #333;
+
+      .key {
+        background-color: #EEE;
+        color: #222;
+      }
+    }
+
+    .submit {
+      background-color: #666;
+      border: solid 1px #333;
+      color: #BBB;
+
+      &:hover {
+        background-color: #555;
+      }
+    }
   }
 }

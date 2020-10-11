@@ -1,6 +1,6 @@
 # KVEditor
 
-React key/value UI component library for your type system. 
+React key/value UI component library. 
 
 ## Setup
 

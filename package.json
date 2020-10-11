@@ -1,7 +1,7 @@
 {
   "name": "@imagemarker/kveditor",
-  "version": "0.1.0",
-  "description": "React key/value UI component library for your type system",
+  "version": "0.1.1",
+  "description": "React key/value UI component library",
   "repository": "github:imagemarker/kveditor",
   "keywords": [
     "react",

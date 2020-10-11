@@ -13,7 +13,7 @@ const KVEditor: KVEditorType = ({
   const [state, dispatch] = useReducer(KVReducer, { items: [], keys: [] });
 
   return (
-    <div className="kv-editor">
+    <div className={`kv-editor ${options.theme}`}>
       {state.items.map((item: KVItemType) => (
         <KVItemView
           key={item.key}

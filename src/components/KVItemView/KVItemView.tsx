@@ -10,7 +10,7 @@ const KVItemView: KVItemViewType = ({ item, dispatch, editorOptions }) => {
   };
 
   return (
-    <div className="kv-item-view">
+    <div className={`kv-item-view ${editorOptions.theme}`}>
       <div className="key-value">
         <div className="key">{key}</div>
         {value}

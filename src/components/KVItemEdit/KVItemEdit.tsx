@@ -50,7 +50,7 @@ const KVItemEdit: KVItemEditType = ({ dispatch, keys, editorOptions, item = { ke
   };
 
   return (
-    <form className="kv-item-edit" onSubmit={onSubmit}>
+    <form className={`kv-item-edit ${editorOptions.theme}`} onSubmit={onSubmit}>
       <div className="row">
         <div className="input-key">
           <input
