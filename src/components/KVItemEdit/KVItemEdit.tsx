@@ -28,18 +28,18 @@ const KVItemEdit: KVItemEditType = ({ dispatch, keys, editorOptions, item = { ke
     const isValidKey = editorOptions.validateKey.test(kv.key);
 
     if (kv.key === '') {
-      setKeyError('Please provide key value!');
+      setKeyError('Please provide key!');
       return;
     }
 
     if (!isValidKey) {
-      setKeyError(`"${kv.key}" is invalid key! First char should be a letter and the rest is alphanumeric.`);
+      setKeyError(`Key "${kv.key}" is invalid! First char should be a letter and the rest is alphanumeric.`);
       return;
     }
 
     const keyExists = keys.includes(kv.key);
     if (keyExists) {
-      setKeyError(`"${kv.key}" already exists! Please change it.`);
+      setKeyError(`Key "${kv.key}" is already exists! Please change it.`);
       return;
     }
 

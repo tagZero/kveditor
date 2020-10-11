@@ -1,4 +1,4 @@
-import React, { useReducer } from 'react';
+import React, { useEffect, useReducer } from 'react';
 import { KVEditorType, KVItemType } from '@base/types';
 import KVReducer from '@base/src/hooks/KVReducer';
 import KVItemEdit from '../KVItemEdit/KVItemEdit';
@@ -11,6 +11,14 @@ const KVEditor: KVEditorType = ({
   options = { theme: 'light', validateKey, typeNotation: 'string', nested: false }
 }) => {
   const [state, dispatch] = useReducer(KVReducer, { items: [], keys: [] });
+
+  useEffect(() => {
+    const items = state.items.reduce(
+      (acc: Record<string, unknown>, { key, value }) => ({ ...acc, [key]: value }),
+      {}
+    );
+    console.log(items);
+  }, [state]);
 
   return (
     <div className={`kv-editor ${options.theme}`}>
