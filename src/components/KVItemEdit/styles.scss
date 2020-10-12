@@ -17,13 +17,13 @@
     .input-key {
       flex: 0 2 auto; /* no grow, shrinks double */
       display: flex;
-      margin-right: 5px;
+      margin-right: 3px;
     }
 
     .input-value {
       flex: 1 1 auto; /* grows, shrinks halve */
       display: flex;
-      margin-right: 5px;
+      margin-right: 3px;
     }
 
     .input-submit {

@@ -1,31 +1,44 @@
 .kv-item-view {
   display: flex;
   flex-flow: row nowrap;
-  margin-bottom: 5px;
+  margin-bottom: 3px;
   flex: 1;
 
   .key-value {
     flex: 1 1 auto;
-    margin-right: 5px;
-    overflow: auto;
+    margin-right: 3px;
     padding: 3px;
     border-radius: 3px;
+    display: flex;
+    flex-flow: row nowrap;
+    min-width: 0;
+    width: 100%;
 
     .key {
       font-weight: 600;
       padding: 3px 5px;
-      display: inline-block;
       background-color: #888;
       color: white;
       margin-right: 3px;
       border-radius: 3px 0 0 3px;
     }
+
+    .value {
+      outline: none;
+      flex: 1 1 auto;
+      box-sizing: border-box;
+      width: 100%;
+    }
   }
 
-  .submit {
+  .remove, .save {
     flex: 0 0 auto;
     cursor: pointer;
     border-radius: 3px;
+  }
+
+  .save {
+    margin-right: 3px;
   }
 
   &.light {
@@ -37,9 +50,15 @@
         background-color: #888;
         color: white;
       }
+
+      .value {
+        border: solid 1px #FFF;
+        background-color: #FFF;
+        color: #333;
+      }
     }
 
-    .submit {
+    .remove, .save {
       background-color: #EEE;
       border: solid 1px #DDD;
       color: #333;
@@ -58,9 +77,15 @@
         background-color: #EEE;
         color: #222;
       }
+
+      .value {
+        border: solid 1px #888;
+        background-color: #888;
+        color: #FFF;
+      }
     }
 
-    .submit {
+    .remove, .save {
       background-color: #666;
       border: solid 1px #333;
       color: #BBB;
