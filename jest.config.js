@@ -7,7 +7,8 @@ module.exports = {
   coverageDirectory: coveragePath,
   collectCoverage: true,
   collectCoverageFrom: [
-    '**/!(*.test).(ts|tsx)'
+    '**/!(*.test).(ts|tsx)',
+    '!example.tsx'
   ],
   transform: {
     '^.+\\.tsx?$': 'ts-jest'

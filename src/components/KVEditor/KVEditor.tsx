@@ -1,6 +1,6 @@
 import React, { useEffect, useReducer } from 'react';
 import { KVEditorType, KVItemType } from '@base/types';
-import KVReducer from '@base/src/hooks/KVReducer';
+import KVReducer from '../../hooks/KVReducer';
 import KVItemEdit from '../KVItemEdit/KVItemEdit';
 import KVItemView from '../KVItemView/KVItemView';
 import './styles.scss';

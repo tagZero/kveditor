@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`KVEditor renders properly 1`] = `
+<DocumentFragment>
+  <div
+    class="kv-editor light"
+  >
+    <form
+      class="kv-item-edit light"
+    >
+      <div
+        class="row"
+      >
+        <div
+          class="input-key"
+        >
+          <input
+            name="key"
+            placeholder="key"
+            type="text"
+            value=""
+          />
+        </div>
+        <div
+          class="input-value"
+        >
+          <input
+            name="value"
+            placeholder="value"
+            type="text"
+            value=""
+          />
+        </div>
+        <input
+          class="input-submit"
+          type="submit"
+          value="Add"
+        />
+      </div>
+    </form>
+  </div>
+</DocumentFragment>
+`;

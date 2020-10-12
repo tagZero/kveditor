@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`KVItemView renders properly 1`] = `
+<DocumentFragment>
+  <form
+    class="kv-item-view light"
+  >
+    <div
+      class="key-value"
+    >
+      <div
+        class="key"
+      >
+        foo
+      </div>
+      <input
+        class="value"
+        name="value"
+        type="text"
+        value="bar"
+      />
+    </div>
+    <input
+      class="remove"
+      type="button"
+      value="Remove"
+    />
+  </form>
+</DocumentFragment>
+`;

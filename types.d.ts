@@ -21,7 +21,7 @@ export interface KVActionRemove extends KVActionBase {
 export interface KVAction extends KVActionAdd, KVActionRemove {}
 
 // Components
-export type TypeNotations = 'string' | 'json';
+export type TypeNotations = 'string';
 export interface KVItemEditPropsType {
   dispatch: Dispatch<ReducerAction<Reducer<KVState, KVAction>>>;
   keys: string[];
