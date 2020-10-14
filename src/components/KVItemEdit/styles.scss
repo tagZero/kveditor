@@ -31,6 +31,7 @@
       cursor: pointer;
       border-radius: 3px;
       padding: 4px;
+      width: 32px;
     }
   }
 
@@ -57,7 +58,7 @@
       }
 
       .input-submit {
-        background-color: #EEE;
+        background: #EEE url('icons/plus-light.svg') no-repeat center center;
         border: solid 1px #DDD;
         color: #333;
 
@@ -90,9 +91,9 @@
       }
 
       .input-submit {
-        background-color: #666;
+        background: #666 url('icons/plus-dark.svg') no-repeat center center;
         border: solid 1px #333;
-        color: #BBB;
+        color: #CCC;
 
         &:hover {
           background-color: #555;

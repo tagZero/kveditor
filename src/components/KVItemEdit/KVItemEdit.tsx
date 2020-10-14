@@ -66,7 +66,7 @@ const KVItemEdit: KVItemEditType = ({ dispatch, keys, editorOptions, item = { ke
         <div className="input-value">
           <input name="value" type="text" value={kv.value} onChange={onValueChange} placeholder="value" />
         </div>
-        <input className="input-submit" type="submit" value="Add" />
+        <input className="input-submit" type="submit" value="" title="Add" />
       </div>
       {error && <div className="error">{error}</div>}
     </form>

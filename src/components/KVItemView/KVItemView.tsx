@@ -4,7 +4,8 @@ import './styles.scss';
 
 const KVItemView: KVItemViewType = ({ item, dispatch, editorOptions }) => {
   const { key, value } = item;
-  const [currentValue, setCurrentValue] = useState(value);
+  const [currentValue, setCurrentValue] = useState(value || '');
+  const [isEditing, setEditing] = useState(false);
 
   const onRemove = () => {
     dispatch({ type: 'REMOVE', key });
@@ -12,11 +13,13 @@ const KVItemView: KVItemViewType = ({ item, dispatch, editorOptions }) => {
 
   const onChange = (event: React.FormEvent<HTMLInputElement>) => {
     setCurrentValue(event.currentTarget.value);
+    setEditing(true);
   };
 
   const onSubmit = (event: React.FormEvent) => {
     event.preventDefault();
     dispatch({ type: 'UPDATE', item: { key, value: currentValue } });
+    setEditing(false);
   };
 
   return (
@@ -25,8 +28,8 @@ const KVItemView: KVItemViewType = ({ item, dispatch, editorOptions }) => {
         <div className="key">{key}</div>
         <input className="value" name="value" type="text" value={currentValue} onChange={onChange} />
       </div>
-      {value !== currentValue ? <input className="save" type="submit" value="Save" /> : null}
-      <input className="remove" type="button" value="Remove" onClick={onRemove} />
+      {isEditing ? <input className="save" type="submit" value="" title="Save" /> : null}
+      <input className="remove" type="button" onClick={onRemove} title="Remove" />
     </form>
   );
 };

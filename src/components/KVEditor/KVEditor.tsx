@@ -1,24 +1,28 @@
 import React, { useEffect, useReducer } from 'react';
-import { KVEditorType, KVItemType } from '@base/types';
+import { KVEditConfigType, KVEditorType, KVItemType } from '@base/types';
 import KVReducer from '../../hooks/KVReducer';
 import KVItemEdit from '../KVItemEdit/KVItemEdit';
 import KVItemView from '../KVItemView/KVItemView';
 import './styles.scss';
 
-const validateKey = new RegExp(/^[a-zA-Z][a-zA-Z0-9]*$/);
-
-const KVEditor: KVEditorType = ({
-  options = { theme: 'light', validateKey, typeNotation: 'string', nested: false }
-}) => {
-  const [state, dispatch] = useReducer(KVReducer, { items: [], keys: [] });
+const KVEditor: KVEditorType = ({ items = [], options, onChange }) => {
+  const defaults = {
+    theme: 'light',
+    validateKey: new RegExp(/^[a-zA-Z][a-zA-Z0-9]*$/),
+    typeNotation: 'string',
+    nested: false
+  };
+  const editorOptions: KVEditConfigType = { ...defaults, ...options };
+  const initialState = { items: items, keys: items.map(({ key }) => key) };
+  const [state, dispatch] = useReducer(KVReducer, initialState);
 
   useEffect(() => {
     const items = state.items.reduce(
       (acc: Record<string, unknown>, { key, value }) => ({ ...acc, [key]: value }),
       {}
     );
-    console.log(items);
-  }, [state]);
+    onChange && onChange(items);
+  }, [onChange, state]);
 
   return (
     <div className={`kv-editor ${options.theme}`}>
@@ -27,11 +31,11 @@ const KVEditor: KVEditorType = ({
           key={item.key}
           item={item}
           dispatch={dispatch}
-          editorOptions={options}
+          editorOptions={editorOptions}
           viewOptions={null}
         />
       ))}
-      <KVItemEdit keys={state.keys} dispatch={dispatch} editorOptions={options} />
+      <KVItemEdit keys={state.keys} dispatch={dispatch} editorOptions={editorOptions} />
     </div>
   );
 };

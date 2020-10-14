@@ -3,7 +3,7 @@ import { Dispatch, Reducer, ReducerAction } from 'react';
 
 export interface KVItemType {
   key: string;
-  value: string;
+  value: any;
 }
 export interface KVState {
   items: KVItemType[];
@@ -21,7 +21,6 @@ export interface KVActionRemove extends KVActionBase {
 export interface KVAction extends KVActionAdd, KVActionRemove {}
 
 // Components
-export type TypeNotations = 'string';
 export interface KVItemEditPropsType {
   dispatch: Dispatch<ReducerAction<Reducer<KVState, KVAction>>>;
   keys: string[];
@@ -41,13 +40,15 @@ export interface KVItemViewType {
   (props: KVItemViewPropsType): JSX.Element;
 }
 export interface KVEditConfigType {
-  typeNotation: TypeNotations;
-  nested: boolean;
-  validateKey: RegExp;
-  theme: 'light' | 'dark';
+  typeNotation?: string;
+  nested?: boolean;
+  validateKey?: RegExp;
+  theme?: string;
 }
 export interface KVEditorPropsType {
+  items?: KVItemType[];
   options?: KVEditConfigType;
+  onChange?: (state: any) => void;
 }
 export interface KVEditorType {
   (props: KVEditorPropsType): JSX.Element;

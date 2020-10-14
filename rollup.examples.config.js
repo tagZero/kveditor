@@ -1,6 +1,7 @@
 import typescript from '@rollup/plugin-typescript';
 import html from '@rollup/plugin-html';
 import postcss from 'rollup-plugin-postcss';
+import copy from 'rollup-plugin-copy';
 
 const template = `
 <!DOCTYPE html>
@@ -11,6 +12,7 @@ const template = `
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
+    <meta name="color-scheme" content="dark light">
     <title>ImageMarker React Components Test</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
@@ -46,6 +48,11 @@ export default {
     }),
     html({
       template: () => template
+    }),
+    copy({
+      targets: [
+        { src: 'icons/*', dest: 'dist/icons' }
+      ]
     })
   ]
 };
