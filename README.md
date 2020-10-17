@@ -1,6 +1,8 @@
 # KVEditor
 
-React key/value UI component library. 
+React key/value UI component library.
+
+<img src="https://imagemarker.s3.eu-central-1.amazonaws.com/kveditor/kveditor-usage.gif" alt="usage" width="427" height="189"/>
 
 ## Setup
 
