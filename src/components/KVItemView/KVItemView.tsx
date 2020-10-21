@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { KVItemViewType } from '@base/src/components/KVItemView/KVItemView.types';
+import { KVItemViewType } from './KVItemView.types';
 import './styles.scss';
 
 const KVItemView: KVItemViewType = ({ item, dispatch, editorOptions }) => {

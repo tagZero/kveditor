@@ -1,5 +1,5 @@
 import { Reducer } from 'react';
-import { KVAction, KVState } from '@base/src/hooks/KVReducer.types';
+import { KVAction, KVState } from './KVReducer.types';
 
 const KVReducer: Reducer<KVState, KVAction> = (state, action) => {
   switch (action.type) {

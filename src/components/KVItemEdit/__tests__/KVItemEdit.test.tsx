@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import { KVEditConfigType } from '@base/src/components/KVEditor/KVEditor.types';
+import { KVEditConfigType } from '../../KVEditor/KVEditor.types';
 import KVItemEdit from '../KVItemEdit';
 
 describe('KVItemEdit', () => {

@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import { KVEditConfigType } from '@base/src/components/KVEditor/KVEditor.types';
+import { KVEditConfigType } from '../KVEditor.types';
 import KVReducer from '../../../hooks/KVReducer';
 import KVEditor from '../KVEditor';
 

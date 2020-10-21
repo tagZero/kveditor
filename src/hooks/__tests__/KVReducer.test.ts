@@ -1,5 +1,5 @@
 import KVReducer from '../KVReducer';
-import { KVState } from '@base/src/hooks/KVReducer.types';
+import { KVState } from '../KVReducer.types';
 
 describe('KVReducer', () => {
   test('ADD works', () => {

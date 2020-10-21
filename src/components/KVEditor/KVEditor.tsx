@@ -1,5 +1,5 @@
 import React, { useEffect, useReducer } from 'react';
-import { KVEditConfigType, KVEditorType, KVItemType } from '@base/src/components/KVEditor/KVEditor.types';
+import { KVEditConfigType, KVEditorType, KVItemType } from './KVEditor.types';
 import KVReducer from '../../hooks/KVReducer';
 import KVItemEdit from '../KVItemEdit/KVItemEdit';
 import KVItemView from '../KVItemView/KVItemView';
