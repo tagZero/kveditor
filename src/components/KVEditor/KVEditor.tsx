@@ -5,7 +5,7 @@ import KVItemEdit from '../KVItemEdit/KVItemEdit';
 import KVItemView from '../KVItemView/KVItemView';
 import './styles.scss';
 
-const KVEditor: KVEditorType = ({ items = [], options, onChange }) => {
+const KVEditor: KVEditorType = ({ items = [], options, onChange }): React.ReactElement => {
   const defaults = {
     theme: 'light',
     validateKey: new RegExp(/^[a-zA-Z][a-zA-Z0-9]*$/),
