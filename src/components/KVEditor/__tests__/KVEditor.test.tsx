@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
+import { KVEditConfigType } from '@base/src/components/KVEditor/KVEditor.types';
 import KVReducer from '../../../hooks/KVReducer';
-import { KVEditConfigType } from '@base/types';
 import KVEditor from '../KVEditor';
 
 jest.mock('../../../hooks/KVReducer');

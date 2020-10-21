@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import ReactDOM from 'react-dom';
+import { KVItemType } from '@base/src/components/KVEditor/KVEditor.types';
 import KVEditor from './components/KVEditor/KVEditor';
-import { KVItemType } from '@base/types';
 
 const App = () => {
   const [darkTheme, setDarkScheme] = useState(false);

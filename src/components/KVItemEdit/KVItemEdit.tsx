@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import { KVItemEditType } from '@base/types';
+import { KVItemEditType } from '@base/src/components/KVItemEdit/KVItemEdit.types';
 import './styles.scss';
 
 const KVItemEdit: KVItemEditType = ({ dispatch, keys, editorOptions, item = { key: '', value: '' } }) => {

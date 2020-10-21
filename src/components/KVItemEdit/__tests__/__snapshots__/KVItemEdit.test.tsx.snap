@@ -30,8 +30,9 @@ exports[`KVItemEdit renders properly 1`] = `
       </div>
       <input
         class="input-submit"
+        title="Add"
         type="submit"
-        value="Add"
+        value=""
       />
     </div>
   </form>

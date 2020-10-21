@@ -1,7 +1,7 @@
 {
   "name": "@imagemarker/kveditor",
-  "version": "0.3.0",
-  "description": "React key/value UI component library",
+  "version": "0.4.0",
+  "description": "React key/value component library",
   "repository": "github:imagemarker/kveditor",
   "keywords": [
     "react",
@@ -11,7 +11,7 @@
     "key-value",
     "editor"
   ],
-  "types": "types.d.ts",
+  "types": "./dist/index.d.ts",
   "license": "MIT",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
@@ -20,8 +20,7 @@
     "dist",
     "package.json",
     "LICENSE.md",
-    "README.md",
-    "types.d.ts"
+    "README.md"
   ],
   "scripts": {
     "clean": "rimraf dist",
@@ -32,7 +31,7 @@
     "build:prod": "NODE_ENV=production rollup -c rollup.config.js",
     "build:example": "yarn clean && NODE_ENV=development rollup -c rollup.examples.config.js",
     "start": "yarn build:example && serve dist",
-    "prepublish": "yarn build"
+    "prepublishOnly": "yarn build"
   },
   "devDependencies": {
     "@rollup/plugin-html": "^0.2.0",

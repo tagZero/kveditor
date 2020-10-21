@@ -22,8 +22,8 @@ exports[`KVItemView renders properly 1`] = `
     </div>
     <input
       class="remove"
+      title="Remove"
       type="button"
-      value="Remove"
     />
   </form>
 </DocumentFragment>

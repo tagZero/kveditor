@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
+import { KVEditConfigType } from '@base/src/components/KVEditor/KVEditor.types';
 import KVItemView from '../KVItemView';
-import { KVEditConfigType } from '@base/types';
 
 describe('KVItemView', () => {
   const validateKey = new RegExp(/^[a-zA-Z][a-zA-Z0-9]*$/);
