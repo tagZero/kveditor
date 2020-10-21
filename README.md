@@ -1,6 +1,6 @@
 # KVEditor
 
-React key/value UI component library.
+React key/value UI component library supports ES6 import and browser light/dark schemes.
 
 <img src="https://imagemarker.s3.eu-central-1.amazonaws.com/kveditor/kveditor-usage.gif" alt="usage" width="427" height="189"/>
 
@@ -20,9 +20,9 @@ yarn start
 
 ```bash
 # development
-y build
+yarn build
 # production
-y build:prod
+yarn build:prod
 ```
 
 ## License
