@@ -26,8 +26,11 @@ yarn build:prod
 ```
 
 ## Usage
-
 ```jsx
+import React, { useState } from 'react';
+import { KVEditor } from '@imagemarker/kveditor';
+
+const App = () => {
   const [items, setItems] = useState([]);
 
   return (
@@ -35,14 +38,22 @@ yarn build:prod
       <KVEditor onChange={setItems} items={items} />
     </div>
   );
+};
+
+export default App;
 ```
 
 Please see `src/example.tsx` file for further usage.
+You should copy `node_modules/@imagemarker/kveditor/dist/icons` folder to your `public` folder to be able to use icons.
 
 ### Props:
-- items (optional): KVItemType[];
-- onChange (optional): (items: KVItemType[]) => void;
-- options (optional): KVEditConfigType;
+- items (optional): If you have existing Key/Value state you can pass it into the component.
+- onChange (optional): When items added/removed/updated this method calls
+- options (optional):
+  - typeNotation: Currently only `string`
+  - nested: Currently only `false`
+  - validateKey: Regular expression to validate your keys
+  - theme: You can choose between `light` and `dark` themes
 
 ## License
 
