@@ -9,7 +9,7 @@ export interface KVEditConfigType {
 export interface KVEditorPropsType {
   items?: KVItemType[];
   options?: KVEditConfigType;
-  onChange?: (state: any) => void;
+  onChange?: (items: KVItemType[]) => void;
 }
 export interface KVEditorType {
   (props: KVEditorPropsType): ReactElement;

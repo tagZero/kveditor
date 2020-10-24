@@ -25,6 +25,25 @@ yarn build
 yarn build:prod
 ```
 
+## Usage
+
+```jsx
+  const [items, setItems] = useState([]);
+
+  return (
+    <div>
+      <KVEditor onChange={setItems} items={items} />
+    </div>
+  );
+```
+
+Please see `src/example.tsx` file for further usage.
+
+### Props:
+- items (optional): KVItemType[];
+- onChange (optional): (items: KVItemType[]) => void;
+- options (optional): KVEditConfigType;
+
 ## License
 
 ![The MIT License](https://img.shields.io/badge/license-MIT-brightgreen.svg)

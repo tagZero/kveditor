@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import ReactDOM from 'react-dom';
-import { KVItemType } from '@base/src/components/KVEditor/KVEditor.types';
 import KVEditor from './components/KVEditor/KVEditor';
 
 const App = () => {
   const [darkTheme, setDarkScheme] = useState(false);
-
-  const onChange = (items: KVItemType[]) => {
-    console.log(items);
-  };
+  const [items, setItems] = useState([
+    { key: 'product', value: 'T-Shirt' },
+    { key: 'price', value: '$50.95' },
+    { key: 'link', value: 'https://www.example.org' }
+  ]);
 
   useEffect(() => {
     const setTheme = (event: MediaQueryListEvent) => {
@@ -25,15 +25,9 @@ const App = () => {
     return () => mql.removeEventListener('change', setTheme);
   }, []);
 
-  const items = [
-    { key: 'product', value: 'T-Shirt' },
-    { key: 'price', value: '$50.95' },
-    { key: 'link', value: 'https://www.example.org' }
-  ];
-
   return (
-    <div style={{ width: '400px', margin: '20px' }}>
-      <KVEditor onChange={onChange} items={items} options={{ theme: darkTheme ? 'dark' : 'light' }} />
+    <div>
+      <KVEditor onChange={setItems} items={items} options={{ theme: darkTheme ? 'dark' : 'light' }} />
     </div>
   );
 };

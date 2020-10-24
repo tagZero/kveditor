@@ -14,7 +14,6 @@ const template = `
     />
     <meta name="color-scheme" content="dark light">
     <title>ImageMarker React Components Test</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
   </head>
   <body>

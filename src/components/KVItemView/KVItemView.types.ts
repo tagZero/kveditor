@@ -6,7 +6,6 @@ export interface KVItemViewPropsType {
   dispatch: Dispatch<ReducerAction<Reducer<KVState, KVAction>>>;
   item: KVItemType;
   editorOptions: KVEditConfigType;
-  viewOptions: any;
 }
 export interface KVItemViewType {
   (props: KVItemViewPropsType): JSX.Element;

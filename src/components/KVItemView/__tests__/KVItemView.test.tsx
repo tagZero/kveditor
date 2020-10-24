@@ -11,13 +11,7 @@ describe('KVItemView', () => {
     options: KVEditConfigType = { theme: 'light', validateKey, typeNotation: 'string', nested: false }
   ) =>
     render(
-      <KVItemView
-        key="key"
-        item={{ key: 'foo', value: 'bar' }}
-        dispatch={dispatch}
-        editorOptions={options}
-        viewOptions={null}
-      />
+      <KVItemView key="key" item={{ key: 'foo', value: 'bar' }} dispatch={dispatch} editorOptions={options} />
     );
 
   test('renders properly', () => {

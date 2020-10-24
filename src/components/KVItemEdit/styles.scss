@@ -12,6 +12,7 @@
       padding: 5px;
       min-width: 30px;
       width: 100%;
+      font-size: 14px;
     }
 
     .input-key {
@@ -32,12 +33,12 @@
       border-radius: 3px;
       padding: 4px;
       width: 32px;
+      height: 32px;
     }
   }
 
   .error {
     margin: 5px 0;
-    font-size: 14px;
   }
 
   &.light {
