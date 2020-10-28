@@ -31,7 +31,7 @@ export default {
   output: {
     dir: 'dist',
     name: 'KVEditor',
-    sourcemap: 'inline',
+    sourcemap: true,
     format: 'umd',
     globals: {
       'react': 'React',

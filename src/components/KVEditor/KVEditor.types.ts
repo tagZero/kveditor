@@ -8,6 +8,7 @@ export interface KVEditConfigType {
 }
 export interface KVEditorPropsType {
   items?: KVItemType[];
+  rawObject?: any;
   options?: KVEditConfigType;
   onChange?: (items: KVItemType[]) => void;
 }

@@ -10,7 +10,7 @@ export default {
   output: {
     dir: 'dist',
     name: 'KVEditor',
-    sourcemap: production ? 'none' : 'inline',
+    sourcemap: !production,
     format: 'es',
     globals: {
       'react': 'React',

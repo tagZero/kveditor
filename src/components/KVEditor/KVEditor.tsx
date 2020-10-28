@@ -5,7 +5,7 @@ import KVItemEdit from '../KVItemEdit/KVItemEdit';
 import KVItemView from '../KVItemView/KVItemView';
 import './styles.scss';
 
-const KVEditor: KVEditorType = ({ items = [], options = {}, onChange }): React.ReactElement => {
+const KVEditor: KVEditorType = ({ items, rawObject, options = {}, onChange }): React.ReactElement => {
   const defaults = {
     theme: 'light',
     validateKey: new RegExp(/^[a-zA-Z][a-zA-Z0-9]*$/),
@@ -13,8 +13,17 @@ const KVEditor: KVEditorType = ({ items = [], options = {}, onChange }): React.R
     nested: false
   };
   const editorOptions: KVEditConfigType = { ...defaults, ...options };
-  const initialState = { items: items, keys: items.map(({ key }) => key) };
-  const [state, dispatch] = useReducer(KVReducer, initialState);
+  const [state, dispatch] = useReducer(
+    KVReducer,
+    items
+      ? { items: items, keys: items.map(({ key }) => key) }
+      : rawObject
+      ? {
+          items: Object.keys(rawObject).map((key) => ({ key, value: rawObject[key] })),
+          keys: Object.keys(rawObject)
+        }
+      : { items: [], keys: [] }
+  );
 
   useEffect(() => {
     onChange && onChange(state.items);

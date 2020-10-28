@@ -9,6 +9,11 @@ const App = () => {
     { key: 'price', value: '$50.95' },
     { key: 'link', value: 'https://www.example.org' }
   ]);
+  const rawObject = {
+    product: 'T-Shirt',
+    price: '$50.95',
+    link: 'https://www.example.org'
+  };
 
   useEffect(() => {
     const setTheme = (event: MediaQueryListEvent) => {
@@ -27,7 +32,7 @@ const App = () => {
 
   return (
     <div>
-      <KVEditor onChange={setItems} items={items} options={{ theme: darkTheme ? 'dark' : 'light' }} />
+      <KVEditor onChange={setItems} rawObject={rawObject} options={{ theme: darkTheme ? 'dark' : 'light' }} />
     </div>
   );
 };
