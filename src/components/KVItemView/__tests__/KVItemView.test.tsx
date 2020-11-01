@@ -7,9 +7,7 @@ describe('KVItemView', () => {
   const validateKey = new RegExp(/^[a-zA-Z][a-zA-Z0-9]*$/);
   const dispatch = jest.fn();
 
-  const tree = (
-    options: KVEditConfigType = { theme: 'light', validateKey, typeNotation: 'string', nested: false }
-  ) =>
+  const tree = (options: KVEditConfigType = { theme: 'light', validateKey }) =>
     render(
       <KVItemView key="key" item={{ key: 'foo', value: 'bar' }} dispatch={dispatch} editorOptions={options} />
     );

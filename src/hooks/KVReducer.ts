@@ -21,8 +21,8 @@ const KVReducer: Reducer<KVState, KVAction> = (state, action) => {
       };
     }
     case 'UPDATE': {
-      const items = state.items.map(({ key, value }) =>
-        key === action.item.key ? { key, value: action.item.value } : { key, value }
+      const items = state.items.map(({ key, value, options = {} }) =>
+        key === action.item.key ? { key, value: action.item.value, options } : { key, value, options }
       );
       const keys = items.map(({ key }) => key);
       return {

@@ -17,10 +17,7 @@
     "sourceMap": true,
     "jsx": "react",
     "types": ["react", "react-dom", "jest"],
-    "lib": ["ESNext", "DOM", "ES2015.Promise"],
-    "paths": {
-      "@base/*": ["./*"]
-    }
+    "lib": ["ESNext", "DOM", "ES2015.Promise"]
   },
   "exclude": [
     "node_modules"

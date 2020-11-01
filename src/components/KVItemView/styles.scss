@@ -6,7 +6,6 @@
 
   .key-value {
     flex: 1 1 auto;
-    margin-right: 3px;
     padding: 3px;
     border-radius: 3px;
     display: flex;
@@ -17,12 +16,9 @@
     .key {
       font-weight: 600;
       padding: 3px 5px;
-      background-color: #888;
-      color: white;
       margin-right: 3px;
       border-radius: 3px 0 0 3px;
     }
-
     .value {
       outline: none;
       flex: 1 1 auto;
@@ -30,17 +26,13 @@
       width: 100%;
     }
   }
-
   .remove, .save {
     flex: 0 0 auto;
     cursor: pointer;
     border-radius: 3px;
     padding: 4px;
     width: 32px;
-  }
-
-  .save {
-    margin-right: 3px;
+    margin-left: 3px;
   }
 
   &.light {
@@ -52,14 +44,25 @@
         background-color: #888;
         color: white;
       }
-
       .value {
         border: solid 1px #FFF;
         background-color: #FFF;
         color: #333;
       }
-    }
+      &.key-id, &.key-disabled {
+        background-color: #EEE;
 
+        .value {
+          border: solid 1px #EEE;
+          background-color: #EEE;
+        }
+      }
+      &.key-id {
+        .key {
+          background-color: #A00;
+        }
+      }
+    }
     .remove {
       background: #EEE url('icons/bin-light.svg') no-repeat center center;
     }
@@ -84,14 +87,25 @@
         background-color: #EEE;
         color: #222;
       }
-
       .value {
         border: solid 1px #888;
         background-color: #888;
         color: #FFF;
       }
-    }
+      &.key-id, &.key-disabled {
+        background-color: #666;
 
+        .value {
+          border: solid 1px #666;
+          background-color: #666;
+        }
+      }
+      &.key-id {
+        .key {
+          background-color: #F99;
+        }
+      }
+    }
     .remove {
       background: #666 url('icons/bin-dark.svg') no-repeat center center;
     }

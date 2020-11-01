@@ -1,8 +1,9 @@
-import { KVItemType } from '../components/KVEditor/KVEditor.types';
+import { KVEditConfigType, KVItemType } from '../components/KVEditor/KVEditor.types';
 
 export interface KVState {
   items: KVItemType[];
   keys: string[];
+  options?: KVEditConfigType;
 }
 export interface KVActionBase {
   type: string;

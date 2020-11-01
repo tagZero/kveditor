@@ -1,5 +1,6 @@
 import React, { useRef, useState } from 'react';
 import { KVItemEditType } from './KVItemEdit.types';
+import errors from '../../constants/errors';
 import './styles.scss';
 
 const KVItemEdit: KVItemEditType = ({ dispatch, keys, editorOptions, item = { key: '', value: '' } }) => {
@@ -28,18 +29,18 @@ const KVItemEdit: KVItemEditType = ({ dispatch, keys, editorOptions, item = { ke
     const isValidKey = editorOptions.validateKey.test(kv.key);
 
     if (kv.key === '') {
-      setKeyError('Please provide key!');
+      setKeyError(errors.keyRequired);
       return;
     }
 
     if (!isValidKey) {
-      setKeyError(`Key "${kv.key}" is invalid! First char should be a letter and the rest is alphanumeric.`);
+      setKeyError(errors.keyInvalid);
       return;
     }
 
     const keyExists = keys.includes(kv.key);
     if (keyExists) {
-      setKeyError(`Key "${kv.key}" is already exists! Please change it.`);
+      setKeyError(errors.keyExists);
       return;
     }
 

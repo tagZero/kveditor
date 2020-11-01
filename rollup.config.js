@@ -1,3 +1,5 @@
+import { nodeResolve } from '@rollup/plugin-node-resolve';
+import replace from '@rollup/plugin-replace';
 import typescript from '@rollup/plugin-typescript';
 import postcss from 'rollup-plugin-postcss';
 import { terser } from "rollup-plugin-terser";
@@ -19,6 +21,9 @@ export default {
   },
   external: ['react', 'react-dom'],
   plugins: [
+    replace({
+      'process.env.NODE_ENV': JSON.stringify(process.env.NODE)
+    }),
     typescript(),
     copy({
       targets: [
@@ -28,6 +33,9 @@ export default {
     postcss({
       extract: false,
       use: ['sass']
+    }),
+    nodeResolve({
+      browser: true
     }),
     production ? terser() : null
   ]

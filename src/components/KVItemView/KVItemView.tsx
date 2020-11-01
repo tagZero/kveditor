@@ -3,7 +3,7 @@ import { KVItemViewType } from './KVItemView.types';
 import './styles.scss';
 
 const KVItemView: KVItemViewType = ({ item, dispatch, editorOptions }) => {
-  const { key, value } = item;
+  const { key, value, options = {} } = item;
   const [currentValue, setCurrentValue] = useState(value || '');
   const [isEditing, setEditing] = useState(false);
 
@@ -22,14 +22,32 @@ const KVItemView: KVItemViewType = ({ item, dispatch, editorOptions }) => {
     setEditing(false);
   };
 
+  if (key === editorOptions.idField) {
+    return (
+      <div className={`kv-item-view ${editorOptions.theme}`}>
+        <div className="key-value key-id">
+          <div className="key">{key}</div>
+          <input className="value" name="value" type="text" value={currentValue} disabled={true} />
+        </div>
+      </div>
+    );
+  }
+
   return (
     <form onSubmit={onSubmit} className={`kv-item-view ${editorOptions.theme}`}>
-      <div className="key-value">
+      <div className={`${options.immutable ? 'key-value key-disabled' : 'key-value'}`}>
         <div className="key">{key}</div>
-        <input className="value" name="value" type="text" value={currentValue} onChange={onChange} />
+        <input
+          className="value"
+          name="value"
+          type="text"
+          value={currentValue}
+          onChange={onChange}
+          disabled={options.immutable}
+        />
       </div>
       {isEditing ? <input className="save" type="submit" value="" title="Save" /> : null}
-      <input className="remove" type="button" onClick={onRemove} title="Remove" />
+      {!options.fixed && <input className="remove" type="button" onClick={onRemove} title="Remove" />}
     </form>
   );
 };
