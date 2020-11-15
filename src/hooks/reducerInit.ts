@@ -13,7 +13,7 @@ const init = ({
   let items = defaultItems || [];
   let keys: Array<string> = [];
 
-  if (items) {
+  if (items.length > 0) {
     keys = items.map(({ key }) => key);
   } else if (rawObject) {
     keys = Object.keys(rawObject);

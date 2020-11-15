@@ -10,6 +10,7 @@ module.exports = {
     '**/!(*.test).(ts|tsx)',
     '!example.tsx'
   ],
+  coverageReporters: ['json', 'html'],
   transform: {
     '^.+\\.tsx?$': 'ts-jest'
   },
