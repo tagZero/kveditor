@@ -54,7 +54,7 @@ export default {
       use: ['sass']
     }),
     nodeResolve({
-      preferBuiltins: true
+      browser: true
     }),
     production ? terser() : null
   ]
