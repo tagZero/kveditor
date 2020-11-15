@@ -1,6 +1,6 @@
 {
   "name": "@imagemarker/kveditor",
-  "version": "0.6.3",
+  "version": "0.6.4",
   "description": "React key/value component library",
   "repository": "github:imagemarker/kveditor",
   "keywords": [
@@ -15,7 +15,7 @@
   "types": "dist/index.d.ts",
   "main": "dist/cjs/index.js",
   "module": "dist/es/index.js",
-  "browser": "dist/umd/index.js",
+  "browser": "dist/es/index.js",
   "files": [
     "dist",
     "package.json",
@@ -74,7 +74,7 @@
     "react-dom": "^17.0.1"
   },
   "dependencies": {
-    "@imagemarker/use-text-width": "^0.4.0",
+    "@imagemarker/use-text-width": "^0.4.3",
     "nanoid": "^3.1.16"
   },
   "watch": {

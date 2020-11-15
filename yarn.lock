@@ -1013,10 +1013,10 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
-"@imagemarker/use-text-width@^0.4.0":
-  version "0.4.0"
-  resolved "https://registry.yarnpkg.com/@imagemarker/use-text-width/-/use-text-width-0.4.0.tgz#344eb04f5cf7bd6eee44c13a396717954e2643cc"
-  integrity sha512-IqP3VZwnoUVxl8LDHPTZ9o1G4qFw7QGicXSrpifkPW0xlD6T79pfNQATvhM/TophAxk9cjOzkSXnp6sVLieSDQ==
+"@imagemarker/use-text-width@^0.4.3":
+  version "0.4.3"
+  resolved "https://registry.yarnpkg.com/@imagemarker/use-text-width/-/use-text-width-0.4.3.tgz#27516dc76cacb709fcfa14842d5eeb7bf6dde5ec"
+  integrity sha512-Rwm/7MvZx+1vGkiQSpL8PAWElBTHz0bWF+kMJgpB5OVFHG+xgKUFH6+UX1GNQtCwoXfMU1OLgB+yW01v0JvzEA==
 
 "@istanbuljs/load-nyc-config@^1.0.0":
   version "1.1.0"

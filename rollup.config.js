@@ -27,12 +27,6 @@ export default {
       ...output,
       file: 'dist/es/index.js',
       format: 'es'
-    },
-    {
-      ...output,
-      file: 'dist/umd/index.js',
-      name: 'KVEditor',
-      format: 'umd',
     }
   ],
   external: ['react', 'react-dom'],
