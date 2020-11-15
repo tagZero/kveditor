@@ -80,7 +80,12 @@ All props are optional. You should either use `items` or `rawObject`
 - options `{ object }`:
   - idField `{ string }`: If defined adds fixed and immutable key/value. If that field defined already defined it uses existing one.
   - validateKey `{ RegExp }`: Regular expression to validate your keys
-  - theme `{ 'light' | 'dark' }`: You can choose between `light` and `dark` themes
+  - theme `{ 'light' | 'dark' }`: You can choose between `light` and `dark` themes  
+  - stretchLabels `{ bool, default: true }` sets label widths to max one
+  
+    ![light theme](https://imagemarker.s3.eu-central-1.amazonaws.com/kveditor/light-stretch.png)
+    
+    ![dark theme](https://imagemarker.s3.eu-central-1.amazonaws.com/kveditor/dark-stretch.png)
 
 ## License
 

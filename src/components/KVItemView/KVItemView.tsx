@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { KVItemViewType } from './KVItemView.types';
 import './styles.scss';
 
-const KVItemView: KVItemViewType = ({ item, dispatch, editorOptions }) => {
+const KVItemView: KVItemViewType = ({ item, dispatch, editorOptions, labelWidth }) => {
   const { key, value, options = {} } = item;
   const [currentValue, setCurrentValue] = useState(value || '');
   const [isEditing, setEditing] = useState(false);
@@ -22,11 +22,15 @@ const KVItemView: KVItemViewType = ({ item, dispatch, editorOptions }) => {
     setEditing(false);
   };
 
+  const labelWidthStyle = editorOptions.stretchLabels ? { width: `${labelWidth}px` } : {};
+
   if (key === editorOptions.idField) {
     return (
       <div className={`kv-item-view ${editorOptions.theme}`}>
         <div className="key-value key-id">
-          <div className="key">{key}</div>
+          <div className="key" style={labelWidthStyle}>
+            {key}
+          </div>
           <input className="value" name="value" type="text" value={currentValue} disabled={true} />
         </div>
       </div>
@@ -36,7 +40,9 @@ const KVItemView: KVItemViewType = ({ item, dispatch, editorOptions }) => {
   return (
     <form onSubmit={onSubmit} className={`kv-item-view ${editorOptions.theme}`}>
       <div className={`${options.immutable ? 'key-value key-disabled' : 'key-value'}`}>
-        <div className="key">{key}</div>
+        <div className="key" style={labelWidthStyle}>
+          {key}
+        </div>
         <input
           className="value"
           name="value"

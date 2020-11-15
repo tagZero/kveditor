@@ -4,6 +4,7 @@ export interface KVEditConfigType {
   validateKey?: RegExp;
   theme?: string;
   idField?: string;
+  stretchLabels?: boolean;
 }
 export interface KVEditorPropsType {
   items?: KVItemType[];

@@ -26,7 +26,7 @@ describe('KVReducer', () => {
     const action = { type: 'UPDATE', item: { key: 'foo', value: 'baz' } };
 
     const state = KVReducer(initialState, action);
-    expect(state.items[0]).toEqual({ key: 'foo', value: 'baz' });
+    expect(state.items[0]).toEqual({ key: 'foo', value: 'baz', options: {} });
     expect(state.items.length).toBe(1);
   });
 });

@@ -1,4 +1,5 @@
 import React, { useEffect, useReducer } from 'react';
+import { useTextWidth } from '@imagemarker/use-text-width';
 import { KVEditConfigType, KVEditorType, KVItemType } from './KVEditor.types';
 import KVReducer from '../../hooks/KVReducer';
 import KVItemEdit from '../KVItemEdit/KVItemEdit';
@@ -9,10 +10,12 @@ import './styles.scss';
 const KVEditor: KVEditorType = ({ items, rawObject, options = {}, onChange }): React.ReactElement => {
   const defaults = {
     theme: 'light',
-    validateKey: new RegExp(/^[a-zA-Z][a-zA-Z0-9]*$/)
+    validateKey: new RegExp(/^[a-zA-Z][a-zA-Z0-9]*$/),
+    stretchLabels: true
   };
   const editorOptions: KVEditConfigType = { ...defaults, ...options };
   const [state, dispatch] = useReducer(KVReducer, { items, rawObject, editorOptions }, init);
+  const labelWidth = useTextWidth({ text: state.keys, font: '600 14px "Source Sans Pro", sans-serif' });
 
   useEffect(() => {
     onChange && onChange(state.items);
@@ -21,7 +24,13 @@ const KVEditor: KVEditorType = ({ items, rawObject, options = {}, onChange }): R
   return (
     <div className={`kv-editor ${options.theme || ''}`}>
       {state.items.map((item: KVItemType) => (
-        <KVItemView key={item.key} item={item} dispatch={dispatch} editorOptions={editorOptions} />
+        <KVItemView
+          key={item.key}
+          item={item}
+          dispatch={dispatch}
+          editorOptions={editorOptions}
+          labelWidth={labelWidth}
+        />
       ))}
       <KVItemEdit keys={state.keys} dispatch={dispatch} editorOptions={editorOptions} />
     </div>
