@@ -1,4 +1,5 @@
-import { nodeResolve } from '@rollup/plugin-node-resolve';
+import resolve from '@rollup/plugin-node-resolve';
+import commonjs from '@rollup/plugin-commonjs';
 import replace from '@rollup/plugin-replace';
 import html from '@rollup/plugin-html';
 import postcss from 'rollup-plugin-postcss';
@@ -45,12 +46,13 @@ export default {
     replace({
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE)
     }),
-    ts(),
     postcss({
       extract: false,
       use: ['sass']
     }),
-    nodeResolve({
+    ts(),
+    commonjs(),
+    resolve({
       browser: true
     }),
     html({

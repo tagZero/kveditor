@@ -1,9 +1,11 @@
-import { nodeResolve } from '@rollup/plugin-node-resolve';
+import resolve from '@rollup/plugin-node-resolve';
+import commonjs from '@rollup/plugin-commonjs';
 import replace from '@rollup/plugin-replace';
 import postcss from 'rollup-plugin-postcss';
 import { terser } from "rollup-plugin-terser";
 import copy from 'rollup-plugin-copy';
 import ts from "@wessberg/rollup-plugin-ts";
+import filesize from 'rollup-plugin-filesize';
 
 const production = process.env.NODE_ENV === 'production';
 
@@ -27,6 +29,12 @@ export default {
       ...output,
       file: 'dist/es/index.js',
       format: 'es'
+    },
+    {
+      ...output,
+      file: 'dist/umd/index.js',
+      format: 'umd',
+      name: 'KVEditor'
     }
   ],
   external: ['react', 'react-dom'],
@@ -34,19 +42,21 @@ export default {
     replace({
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE)
     }),
+    postcss({
+      extract: false,
+      use: ['sass']
+    }),
     ts(),
+    commonjs(),
+    resolve({
+      browser: true
+    }),
     copy({
       targets: [
         { src: 'icons/*', dest: 'dist/icons' }
       ]
     }),
-    postcss({
-      extract: false,
-      use: ['sass']
-    }),
-    nodeResolve({
-      browser: true
-    }),
-    production ? terser() : null
+    production ? terser() : null,
+    filesize()
   ]
 };
