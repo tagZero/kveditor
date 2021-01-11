@@ -4,11 +4,11 @@ import KVEditor from './components/KVEditor/KVEditor';
 
 const App = () => {
   const [darkTheme, setDarkScheme] = useState(false);
-  const [items, setItems] = useState([
+  const defaults = [
     { key: 'product', value: 'T-Shirt', options: { immutable: true } },
     { key: 'price', value: '$50.95', options: { fixed: true } },
     { key: 'link', value: 'https://www.example.org' }
-  ]);
+  ];
 
   useEffect(() => {
     const setTheme = (event: MediaQueryListEvent) => {
@@ -25,11 +25,15 @@ const App = () => {
     return () => mql.removeEventListener('change', setTheme);
   }, []);
 
+  const onChange = (values: any) => {
+    console.log(values);
+  };
+
   return (
     <div>
       <KVEditor
-        onChange={setItems}
-        items={items}
+        defaults={defaults}
+        onChange={onChange}
         options={{ idField: 'id', theme: darkTheme ? 'dark' : 'light' }}
       />
     </div>

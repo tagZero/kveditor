@@ -7,7 +7,7 @@ export interface KVEditConfigType {
   stretchLabels?: boolean;
 }
 export interface KVEditorPropsType {
-  items?: KVItemType[];
+  defaults?: KVItemType[];
   rawObject?: any;
   options?: KVEditConfigType;
   onChange?: (items: any) => void;

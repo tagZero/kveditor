@@ -44,17 +44,21 @@ export default App;
 
 ```jsx
 const App = ({ darkTheme }: { darkTheme: boolean }) => {
-  const [items, setItems] = useState([
+  const defaults = [
     { key: 'product', value: 'T-Shirt', options: { immutable: true } },
     { key: 'price', value: '$50.95', options: { fixed: true } },
     { key: 'link', value: 'https://www.example.org' }
-  ]);
+  ];
+
+  const onChange = (values) => {
+    console.log(values);
+  };
 
   return (
     <div>
       <KVEditor
-        items={items}
-        onChange={setItems}
+        defaults={defaults}
+        onChange={onChange}
         options={{
           idField: 'id',
           theme: darkTheme ? 'dark' : 'light',
@@ -72,9 +76,9 @@ You should copy `node_modules/@tag0/kveditor/dist/icons` folder to your `public`
 
 ### Props:
 
-All props are optional. You should either use `items` or `rawObject` 
+All props are optional. You should either use `defaults` or `rawObject`. Component has internal state to keep key/value changes therefore you can use defaults only the first time.    
 
-- items `{ key: string; value: any; options: KVItemOptionsType }`: If you have existing Key/Value state you can pass it into the component.
+- defaults `{ key: string; value: any; options: KVItemOptionsType }`: Default values and options for the key/value editor.
 - rawObject `{ any }`: You can pass any object into this and you would get Key/Value state automatically.
 - onChange `{ function }`: When items added/removed/updated this method calls with items.
 - options `{ object }`:

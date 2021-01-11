@@ -7,14 +7,14 @@ import KVItemView from '../KVItemView/KVItemView';
 import init from '../../hooks/reducerInit';
 import './styles.scss';
 
-const KVEditor: KVEditorType = ({ items, rawObject, options = {}, onChange }): React.ReactElement => {
-  const defaults = {
+const KVEditor: KVEditorType = ({ defaults, rawObject, options = {}, onChange }): React.ReactElement => {
+  const defaultOptions = {
     theme: 'light',
     validateKey: new RegExp(/^[a-zA-Z][a-zA-Z0-9]*$/),
     stretchLabels: true
   };
-  const editorOptions: KVEditConfigType = { ...defaults, ...options };
-  const [state, dispatch] = useReducer(KVReducer, { items, rawObject, editorOptions }, init);
+  const editorOptions: KVEditConfigType = { ...defaultOptions, ...options };
+  const [state, dispatch] = useReducer(KVReducer, { items: defaults, rawObject, editorOptions }, init);
   const labelWidth = useTextWidth({ text: state.keys, font: '600 14px "Source Sans Pro", sans-serif' });
 
   useEffect(() => {
