@@ -16,7 +16,7 @@ const template = `
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
     <meta name="color-scheme" content="dark light">
-    <title>ImageMarker React Components Test</title>
+    <title>KVEditor Test</title>
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
   </head>
   <body>

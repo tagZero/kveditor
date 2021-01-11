@@ -1,6 +1,8 @@
 # KVEditor
 
-React key/value component library. Supports browser light/dark themes.
+[![License][license-src]][license-href]
+
+React key/value UI component.
 
 <img src="https://imagemarker.s3.eu-central-1.amazonaws.com/kveditor/kveditor-usage.gif" alt="usage" width="427" height="189"/>
 
@@ -27,13 +29,11 @@ yarn build:prod
 
 ## Usage
 
-KVEditor has it's own state and works out of the box without any dependency.
-
 ### Simple usage
 
 ```jsx
 import React from 'react';
-import { KVEditor } from '@imagemarker/kveditor';
+import { KVEditor } from '@tag0/kveditor';
 
 const App = () => <KVEditor />
 
@@ -68,7 +68,7 @@ const App = ({ darkTheme }: { darkTheme: boolean }) => {
 
 You can run example in `src/example.tsx` file with `yarn start`.
 
-You should copy `node_modules/@imagemarker/kveditor/dist/icons` folder to your `public` folder to be able to use icons.
+You should copy `node_modules/@tag0/kveditor/dist/icons` folder to your `public` folder to be able to use icons.
 
 ### Props:
 
@@ -83,14 +83,11 @@ All props are optional. You should either use `items` or `rawObject`
   - theme `{ 'light' | 'dark' }`: You can choose between `light` and `dark` themes  
   - stretchLabels `{ bool, default: true }` sets all key labels to same size
   
-    ![light theme](https://imagemarker.s3.eu-central-1.amazonaws.com/kveditor/light-stretch.png)
+    ![light theme][light-theme]
     
-    ![dark theme](https://imagemarker.s3.eu-central-1.amazonaws.com/kveditor/dark-stretch.png)
-
-## License
-
-![The MIT License](https://img.shields.io/badge/license-MIT-brightgreen.svg)
-
-Please see [License File](LICENSE.md) for more information.
-
-[link-author]: https://github.com/imagemarker
+    ![dark theme][dark-theme]
+    
+[license-src]: https://img.shields.io/badge/license-MIT-brightgreen.svg
+[license-href]: LICENSE.md
+[light-theme]: https://imagemarker.s3.eu-central-1.amazonaws.com/kveditor/light-stretch.png
+[dark-theme]: https://imagemarker.s3.eu-central-1.amazonaws.com/kveditor/dark-stretch.png

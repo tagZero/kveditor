@@ -1,5 +1,5 @@
 import React, { useEffect, useReducer } from 'react';
-import { useTextWidth } from '@imagemarker/use-text-width';
+import { useTextWidth } from '@tag0/use-text-width';
 import { KVEditConfigType, KVEditorType, KVItemType } from './KVEditor.types';
 import KVReducer from '../../hooks/KVReducer';
 import KVItemEdit from '../KVItemEdit/KVItemEdit';
